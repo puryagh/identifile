@@ -7,7 +7,7 @@ pip-install:
 dev:
 	uvicorn src.main:app --reload --host 0.0.0.0 --port 8080
 
-build:
+docker-build:
 	docker build --tag identifile-pro:latest .
 
 run:
