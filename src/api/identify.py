@@ -28,7 +28,8 @@ def identify(file: UploadFile = File(...)) -> IdentificationResponse:
         description="",
         label="",
         group="",
-        size_kb=file.size / 1024,
+        size=file.size,
+        filename=file.filename
     )
 
 
@@ -60,5 +61,6 @@ def ai_identify(file: UploadFile = File(...)) -> IdentificationResponse:
         description=result.output.description,
         label=result.output.ct_label,
         group=result.output.group,
-        size_kb=file.size / 1024,
+        size=file.size,
+        filename=file.filename
     )

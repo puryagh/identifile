@@ -8,9 +8,9 @@ dev:
 	uvicorn src.main:app --reload --host 0.0.0.0 --port 8080
 
 docker-build:
-	docker build --tag identifile-pro:latest .
+	docker build --tag identifile:latest .
 
-run:
-	docker run -d --name identifile-pro -p 8079:8079 identifile-pro:latest
+docker-start:
+	docker run -d --name identifile -p 8079:8079 identifile:latest
 
-.PHONY: start upgrade-pip
+.PHONY: upgrade-pip pip-install dev docker-build docker-start

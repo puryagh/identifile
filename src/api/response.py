@@ -13,7 +13,7 @@ class IdentificationResponse:
         description (str): A description of the identified object.
         label (str): The label assigned to the identified object.
         group (str): The group to which the identified object belongs.
-        size_kb (float): The size of the identified object in kilobytes.
+        size (float): The size of the identified object.
     """
 
     method: str
@@ -22,4 +22,5 @@ class IdentificationResponse:
     description: str
     label: str
     group: str
-    size_kb: float
+    size: float
+    filename: str
