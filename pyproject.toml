@@ -1,0 +1,56 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "identifile"
+version = "1.0.0"
+description = "REST API for identifying file types based on content using Google Magika AI or standard file header detection"
+readme = "README.MD"
+authors = [
+    {name = "IdentiFile Contributors"}
+]
+license = {text = "GPL-3.0-or-later"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Operating System :: OS Independent",
+    "Topic :: Utilities",
+]
+requires-python = ">=3.9"
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "python-multipart",
+    "magika",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/identifile"
+"Bug Tracker" = "https://github.com/yourusername/identifile/issues"
+
+[tool.setuptools]
+packages = ["src"]
+
+[tool.black]
+line-length = 88
+target-version = ["py39"]
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_functions = "test_*"
